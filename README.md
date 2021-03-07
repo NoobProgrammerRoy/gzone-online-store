@@ -25,3 +25,8 @@ Backend:
 
 Database:
 - MongoDB
+
+### Steps to set up the project
+- Download the project files.
+- Run the following command : **npm install** to install the required dependencies.
+- Run the following command : **npm run dev** to start the server.
