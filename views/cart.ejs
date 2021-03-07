@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5f0ead6ef3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <title>GZone | Online Store</title>
+</head>
+
+<body class="bg-black">
+    <%- include('./utilities/navbar') %>
+
+    <!-- Profile -->
+    <div class="container">
+        <h2 class="text-center text-danger title">Welcome Gamer</h2>
+        <div class="flex flex-row justify-center items-center py-2">
+            <a href="/profile" class="text-light px-1">Profile</a>
+            <a href="/cart" class="text-light px-1">Shopping Cart</a>
+        </div>
+        <div class="grid cart py-1">
+            <% if (user) { %>
+                <% user.cart.forEach( function (product) { %>
+                    <div class="grid games">
+                        <a href="/products/<%=product.name %>">
+                            <img src="../img/<%= product.name %>.jpg" alt="<%= product.title %>">
+                        </a>
+                        <div>
+                            <h3 class="text-danger"><%= product.title %></h3>
+                            <p class="text-light py-1">&#8377; <%= product.price %></p>
+                            <a href="/cart/<%= product.name %>" class="text-primary" id="removeFromCart">Remove from Cart</a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="footer-fixed">
+        <%- include('./utilities/footer') %>
+    </div>
+</body>
+
+</html>

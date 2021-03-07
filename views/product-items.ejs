@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5f0ead6ef3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/product-items.css">
+    <title>GZone | Online Store</title>
+</head>
+
+<body class="bg-black">
+    <!-- Navbar -->
+    <%- include('./utilities/navbar') %>
+    <script src="../js/navbar.js"></script>
+
+    <!-- Product -->
+    <div class="container">
+        <div class="grid product">
+            <div class="text-center">
+                <img src="../img/<%= product.name %>.jpg" alt="">
+            </div>
+            <div>
+                <% if (product) { %>
+                <h2 class="text-danger" id="gameTitle"><%= product.title%></h2>
+                <p class="text-light py-1">Price : &#8377;<b class="text-light"><%= product.price %></b></p>
+                <p class="text-light"><%= product.description %></p>
+                <a href="/products/cart/add/<%= product.name %>"><button class="btn btn-primary my-1" id="addToCart">Add to Cart</button></a>
+                <% } %>
+            </div>
+        </div>
+
+        <hr class="text-light my-1">
+        <div class="my-1">
+            <label for="review"><h3 class="text-danger">Add a Review</h3></label>
+            <input class="my-1" type="text" name="review" id="review" placeholder="Add a Review" required>
+            <button class="btn btn-success" type="submit">Post Review</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./utilities/footer') %>
+    <script src="../js/product-items.js"></script>
+</body>
+
+</html>

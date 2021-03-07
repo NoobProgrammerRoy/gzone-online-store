@@ -1,0 +1,21 @@
+/* Navbar */
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 0 4px #aaa;
+}
+
+nav input[type=text]{
+    border-radius: 2px;
+}
+
+.bg-black{
+    background-color: #000;
+}
+
+.bg-nav{
+    background-color: #111;
+}

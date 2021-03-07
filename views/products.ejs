@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5f0ead6ef3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <title>GZone | Online Store</title>
+</head>
+
+<body class="bg-black">
+    <!-- Navbar -->
+    <%- include('./utilities/navbar') %>
+    <script src="../js/navbar.js"></script>
+
+    <!-- Games List -->
+    <div class="container">
+        <h2 class="text-center text-danger title">The Game Corner</h2>
+        <div class="flex flex-row align-center">
+
+        </div>
+
+        <div class="grid games-list my-2">
+            <% if (products) { %>
+            <% products.forEach( function(product) { %>
+                <a href="/products/<%=product.name %>">
+                    <div class="grid games">
+                        <img src="../img/<%= product.name %>.jpg" alt="<%= product.title %>">
+                        <div>
+                            <h3 class="text-danger"><%= product.title %></h3>
+                            <p class="text-light py-1">&#8377; <%= product.price %></p>
+                        </div>
+                    </div>
+                </a>
+            <% }) %>
+            <% } %>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./utilities/footer') %>
+
+</body>
+
+</html>

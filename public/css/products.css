@@ -1,0 +1,25 @@
+/* Header */
+.title{
+    margin-top: 4rem;
+}
+
+/* Games List */
+.games-list{
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.games{
+    grid-template-columns: 1fr 1fr;
+}
+
+.games img{
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 2px #fff;
+}
+
+.games img:hover{
+    transition-duration: 0.2ms;
+    filter: brightness(0.7);
+    cursor: pointer;
+}

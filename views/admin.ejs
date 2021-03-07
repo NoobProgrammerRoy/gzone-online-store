@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5f0ead6ef3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <title>GZone | Online Store</title>
+</head>
+<body class="bg-black">
+    <!-- Navbar -->
+    <%- include('./utilities/navbar') %>
+
+    <!-- Game Upload -->
+    <div class="container title">
+        <h1 class="text-center text-danger">Admin Portal</h1>
+        <hr class="text-light">
+        <h2 class="text-center text-danger py-1">Upload Game</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <label class="text-light" for="name">Name</label><br>
+            <input type="text" name="name" id="name" placeholder="Name" required><br><br>
+            <label class="text-light" for="title">Title</label><br>
+            <input type="text" name="title" id="title" placeholder="Title" required><br><br>
+            <label class="text-light" for="description">Description</label><br>
+            <input type="text" name="description" id="description" placeholder="Description" required><br><br>
+            <label class="text-light" for="price">Price</label><br>
+            <input type="text" name="price" id="price" placeholder="Price" required><br><br>
+            <label class="btn btn-primary" for="picture"><input type="file" name="picture" id="picture" accept="image/jpeg" required> Upload Picture</label>
+            <button class="btn btn-success mx-1" type="submit">Upload Game</button>
+        </form>
+        <hr class="text-light my-2">
+    </div>
+
+    <!-- Admin Portal -->
+    <div class="container my-2">
+        <h2 class="text-center text-danger">GZone Stats</h2>
+
+    </div>
+</body>
+</html>

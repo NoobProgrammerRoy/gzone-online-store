@@ -1,0 +1,23 @@
+/* Product */
+.product{
+    margin-top: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.product img{
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 2px #fff;
+}
+
+.product img:hover{
+    transition-duration: 0.2ms;
+    filter: brightness(0.7);
+    cursor: pointer;
+}
+
+@media all and (max-width: 767px){
+    .product{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5f0ead6ef3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <title>GZone | Online Store</title>
+</head>
+
+<body class="bg-black">
+    <%- include('./utilities/navbar') %>
+
+    <!-- Profile -->
+    <div class="container">
+        <h2 class="text-center text-danger title">Welcome Gamer</h2>
+        <div class="flex flex-row justify-center items-center py-2">
+            <a href="/profile" class="text-light px-1">Profile</a>
+            <a href="/cart" class="text-light px-1">Shopping Cart</a>
+        </div>
+        <div class="grid profile my-1">
+            <% if (user) { %>
+            <div>
+                <div>
+                    <h3 class="text-danger">Username</h3>
+                    <p class="text-light py-1"><%= user.username %></p>
+                </div>
+                <div class="my-1">
+                    <h3 class="text-danger">Email Address</h3>
+                    <p class="text-light py-1"><%= user.email %></p>
+                </div>
+                <div class="my-1">
+                    <h3 class="text-danger">Password</h3>
+                    <p class="text-light py-1">******</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-center text-danger">My Orders</h3>
+            </div>    
+            <% } %>
+        </div>
+    </div>
+
+    <div class="footer-fixed">
+        <%- include('./utilities/footer') %>
+    </div>
+</body>
+
+</html>

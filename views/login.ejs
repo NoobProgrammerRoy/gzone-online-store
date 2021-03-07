@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/utilities.css">
+    <title>GZone | Online Store</title>
+    <style>
+        .bg-black {
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div class="container">
+        <h1 class="text-center text-danger my-2">GZone Online Store</h1>
+        <h2 class="text-center text-light my-1">Welcome Back</h2>
+        <% if (messages.error) { %>
+            <p class="text-center text-danger py-1"><%= messages.error %></p>
+        <% } %>
+        <form action="/login" method="POST">
+            <label class="text-light" for="email">Email Address</label><br>
+            <input type="email" name="email" id="email" placeholder="Email Address" required><br><br>
+            <label class="text-light" for="password">Password</label><br>
+            <input type="password" name="password" id="password" placeholder="Password" required><br><br>
+            <button class="btn btn-danger">Log in</button>
+        </form>
+        <p class="text-light py-1">Don't have an account ? <a href="/signup" class="text-danger">Click here to create one.</a></p>
+    </div>
+</body>
+
+</html>

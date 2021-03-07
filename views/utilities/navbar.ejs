@@ -1,0 +1,31 @@
+<nav class="bg-nav">
+    <div class="container flex flex-row items-center py-1" id="nav">
+        <div class="flex flex-row items-center">
+            <a class="text-bold text-danger px-1" href="/">GZone</a>
+            <a href="#" class="fas fa-sort-down text-light" id="navButton"></a>
+        </div>
+        <form action="/products" method="POST" class="w-full">
+            <div class="flex flex-row justify-end items-center" id="nav-content">
+                <input type="text" name="product" id="product" list="products" placeholder="Search Product" required>
+                <datalist id="products" style="display: none;">
+                    <option value="Cyberpunk 2077">
+                    <option value="Grand Theft Auto 5">
+                    <option value="Need for Speed - Heat">
+                    <option value="Pokemon Sword">
+                    <option value="All Games...">
+                </datalist>
+                <button class="btn btn-danger fas fa-search" id="productButton"></button>
+                <a href="/products" class="text-light" id="allProducts">Products</a>
+                <% if (!user) { %>
+                    <a class="text-light" href="/login" id="login">Log In</a>
+                    <a class="text-light" href="/signup" id="signup">Sign Up</a>
+                <% } else { %>
+                    <a class="text-light" href="/profile" id="login">Profile</a>
+                    <a class="text-light" href="/logout" id="signup">Log Out</a>
+                <% } %>
+            </div>
+        </form>
+    </div>
+</nav>
+
+<script src="./js/navbar.js" defer></script>

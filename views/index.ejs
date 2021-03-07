@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5f0ead6ef3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <title>GZone | Online Store</title>
+</head>
+
+<body class="bg-black">
+    <!-- Navbar -->
+    <%- include('./utilities/navbar') %>
+
+    <!-- Content -->
+    <div class="content">
+        <img src="./img/background.jpg" alt="GZone Online Store">
+        <h2 class="text-center text-light">GZone - For Gamers, By Gamers</h2>
+    </div>
+
+    <!-- Section -->
+    <!-- <section class="container">
+
+    </section> -->
+
+    <!-- Games -->
+    <div class="container">
+        <h3 class="text-center text-danger py-1">Popular Games</h3>
+        <div class="items grid">
+            <% if (products) { %>
+            <% products.forEach(function(product) {  %>
+            <div>
+                <a href="/products/<%= product.name %>">
+                    <img src="./img/<%= product.name %>.jpg" alt="">
+                    <p class="bg-danger text-center text-bold text-dark py-1"><%= product.title %></p>
+                </a>
+            </div>
+            <% }) %>
+            <% } %>
+        </div>
+    </div>
+    
+    <%- include('./utilities/footer') %>
+
+</body>
+
+</html>

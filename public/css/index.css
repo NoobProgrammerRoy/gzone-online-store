@@ -1,0 +1,47 @@
+/* Content */
+.content img{
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    filter: brightness(0.8);
+}
+
+.content h2{
+    position: absolute;
+    width: 100%;
+    top: 35%;
+}
+
+/* Items */
+.items{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.items div {
+    cursor: pointer;
+}
+
+.items img{
+    width: 100%;
+    height: 40vh;
+}
+
+.items img:hover{
+    transition-duration: 0.2ms;
+    filter: brightness(0.7);
+}
+
+.items p{
+    position: relative;
+    bottom: 1rem;
+}
+
+@media all and (max-width: 767px){
+    .items{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .items img{
+        height: 30vh;
+    }
+}
