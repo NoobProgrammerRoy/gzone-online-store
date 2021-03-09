@@ -19,7 +19,11 @@ const userSchema = new mongoose.Schema({
         title: { type: String, required: true },
         description: { type: String, required: true },
         price: { type: String, required: true }
+    }],
+    owned: [{
+      name: { type: String, required: true },
     }]
+
 })
 
 const user = mongoose.model('user', userSchema)

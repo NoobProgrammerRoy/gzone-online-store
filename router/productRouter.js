@@ -136,4 +136,33 @@ router.get('/cart/remove/:game', async (req, res) => {
     }
 })
 
+
+//Buying the game
+router.get('/cart/buy/:game', async (req, res) => {
+    if (!req.session.user) return res.redirect(`/products/${req.params.game}`)
+    const user = req.session.user
+    try {
+        if (req.params.game) {
+            const product = await Product.findOne({ name: req.params.game })
+            if (product) {
+                const game = await User.updateOne({ email: user.email }, { $push: { owned: { name: product.name } } })
+                if (game) {
+                    req.session.user = await User.findOne({ email: user.email })
+                    res.redirect(`/products/cart/remove/${req.params.game}`)    //remove from cart after buy
+                }
+            }
+            else {
+                res.redirect('/products')
+            }
+        }
+        else {
+            res.redirect('/products')
+        }
+    }
+    catch (err) {
+        console.log(err)
+        res.redirect('/')
+    }
+})
+
 module.exports = router

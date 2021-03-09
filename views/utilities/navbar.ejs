@@ -16,10 +16,12 @@
                 </datalist>
                 <button class="btn btn-danger fas fa-search" id="productButton"></button>
                 <a href="/products" class="text-light" id="allProducts">Products</a>
+
                 <% if (!user) { %>
                     <a class="text-light" href="/login" id="login">Log In</a>
                     <a class="text-light" href="/signup" id="signup">Sign Up</a>
                 <% } else { %>
+                    <a href="/cart" class="text-light" id="allProducts">Cart</a>
                     <a class="text-light" href="/profile" id="login">Profile</a>
                     <a class="text-light" href="/logout" id="signup">Log Out</a>
                 <% } %>
