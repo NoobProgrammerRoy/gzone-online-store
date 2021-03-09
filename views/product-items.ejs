@@ -35,6 +35,15 @@
         </div>
 
         <hr class="text-light my-1">
+        <div class="my-1">
+          <form action="/products/review/<%=product.name %>" method="POST">
+            <label for="review"><h3 class="text-danger">Add a Review</h3></label>
+            <input class="my-1" type="text" name="review" id="review" placeholder="Add a Review" required>
+            <button class="btn btn-success my-1" type="submit">Post Review</button>
+          </form>
+        </div>
+
+        <hr class="text-light my-1">
         <h3 class="text-light"> Comments </h3>
         <div>
             <% if (product) { %>
@@ -45,16 +54,6 @@
                     </div>
                 <% }) %>
             <% } %>
-        </div>
-
-        <hr class="text-light my-1">
-        <div class="my-1">
-          <form action="/products/review/<%=product.name %>" method="POST">
-            <label for="review"><h3 class="text-danger">Add a Review</h3></label>
-            <input class="my-1" type="text" name="review" id="review" placeholder="Add a Review" required>
-            <button class="btn btn-success" type="submit">Post Review</button>
-
-          </form>
         </div>
     </div>
 
