@@ -37,7 +37,7 @@ router.post('/review/:game', async (req, res) => {
           const product = await Product.findOne({ name: req.params.game })
           if (product) {
               console.log(req.body.review);
-              const game = await Product.updateOne({ name: req.params.game }, { $push: { reviews: { username: user.email, comment: req.body.review } } })
+              const game = await Product.updateOne({ name: req.params.game }, { $push: { reviews: { username: user.username, comment: req.body.review } } })
               //console.log(product);
               res.redirect(`/products/${req.params.game}`)
           }
