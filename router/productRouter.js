@@ -27,6 +27,36 @@ router.post('/', async (req, res) => {
     }
 })
 
+//Add Review to Product-item
+router.post('/review/:game', async (req, res) => {
+  if (!req.session.user) return res.redirect(`/login`)
+  const user = req.session.user
+  console.log(req.params.game);
+  try {
+      if (req.params.game) {
+          const product = await Product.findOne({ name: req.params.game })
+          if (product) {
+              console.log(req.body.review);
+              const game = await Product.updateOne({ name: req.params.game }, { $push: { reviews: { username: user.email, comment: req.body.review } } })
+              //console.log(product);
+              res.redirect(`/products/${req.params.game}`)
+          }
+          else {
+              res.redirect('/products')
+          }
+      }
+      else {
+          res.redirect('/products')
+      }
+  }
+  catch (err) {
+      console.log(err)
+      res.redirect('/')
+  }
+})
+
+
+
 // Individual Game Page
 router.get('/:game', async (req, res) => {
     const user = req.session.user

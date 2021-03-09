@@ -34,13 +34,35 @@
             </div>
         </div>
 
+        <h3 class="text-light py-1"> Comments </h3>
+        <div class="grid cart py-1">
+            <% if (product) { %>
+                <% product.reviews.forEach( function (product) { %>
+                    <div class="grid games">
+                        <a href="/products/<%=product.name %>">
+                            <img src="../img/<%= product.name %>.jpg" alt="<%= product.title %>">
+                        </a>
+                        <div>
+                            <h3 class="text-danger"><%= product.username %></h3>
+                            <p class="text-light py-1"><%= product.comment %></p>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+
         <hr class="text-light my-1">
         <div class="my-1">
+          <form action="/products/review/<%=product.name %>" method="POST">
             <label for="review"><h3 class="text-danger">Add a Review</h3></label>
             <input class="my-1" type="text" name="review" id="review" placeholder="Add a Review" required>
             <button class="btn btn-success" type="submit">Post Review</button>
+
+          </form>
         </div>
     </div>
+
+
 
     <!-- Footer -->
     <%- include('./utilities/footer') %>

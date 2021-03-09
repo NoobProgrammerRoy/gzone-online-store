@@ -15,7 +15,11 @@ const productSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: { type: String, required: true},
     price : { type: String, required: true },
-    path: {type: String, required: true}
+    path: {type: String, required: true},
+    reviews: [{
+        username: { type: String, required: true },
+        comment: { type: String, required: true }
+    }]
 })
 
 const product = mongoose.model('product', productSchema)
