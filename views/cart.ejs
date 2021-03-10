@@ -33,8 +33,8 @@
                         <div>
                             <h3 class="text-danger"><%= product.title %></h3>
                             <p class="text-light py-1">&#8377; <%= product.price %></p>
-                            <a href="/products/cart/buy/<%= product.name %>"><button class="btn btn-primary my-1" id="addToCart">Buy</button></a>
-                            <a href="/cart/<%= product.name %>" class="text-primary" id="removeFromCart"><button class="btn btn-primary my-1" id="addToCart">Remove from Cart</button></a>
+                            <a href="/products/cart/buy/<%= product.name %>"><button class="btn btn-success my-1" id="addToCart">Buy</button></a>
+                            <a href="/cart/<%= product.name %>" class="text-primary" id="removeFromCart"><button class="btn btn-danger mx-1 my-1" id="addToCart">Remove from Cart</button></a>
                         </div>
                     </div>
                 <% }) %>
