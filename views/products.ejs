@@ -28,15 +28,15 @@
         <div class="grid games-list my-2">
             <% if (products) { %>
             <% products.forEach( function(product) { %>
-                <a href="/products/<%=product.name %>">
-                    <div class="grid games">
+                <div class="grid games">
+                    <a href="/products/<%=product.name %>">
                         <img src="../img/<%= product.name %>.jpg" alt="<%= product.title %>">
-                        <div>
-                            <h3 class="text-danger"><%= product.title %></h3>
-                            <p class="text-light py-1">&#8377; <%= product.price %></p>
-                        </div>
+                    </a>
+                    <div class="bg-danger-gradient p-1">
+                        <h3 class="text-dark"><%= product.title %></h3>
+                        <p class="text-light py-1">&#8377; <%= product.price %></p>
                     </div>
-                </a>
+                </div>
             <% }) %>
             <% } %>
         </div>
