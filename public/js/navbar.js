@@ -19,6 +19,8 @@ function checkNavbar() {
     document.getElementById('login').classList.remove('my-1')
     document.getElementById('signup').classList.add('px-1')
     document.getElementById('signup').classList.remove('my-1')
+    document.getElementById('cart').classList.add('px-1')
+    document.getElementById('cart').classList.remove('my-1')
 
     if (screen.width > 767) {
         document.getElementById('product').classList.add('display-block')
@@ -31,6 +33,8 @@ function checkNavbar() {
         document.getElementById('login').classList.remove('display-none')
         document.getElementById('signup').classList.add('display-block')
         document.getElementById('signup').classList.remove('display-none')
+        document.getElementById('cart').classList.add('display-block')
+        document.getElementById('cart').classList.remove('display-none')
         document.getElementById('navButton').classList.add('display-none')
         document.getElementById('navButton').classList.remove('display-block')
     }
@@ -45,6 +49,8 @@ function checkNavbar() {
         document.getElementById('login').classList.remove('display-block')
         document.getElementById('signup').classList.add('display-none')
         document.getElementById('signup').classList.remove('display-block')
+        document.getElementById('cart').classList.add('display-none')
+        document.getElementById('cart').classList.remove('display-block')
         document.getElementById('navButton').classList.add('display-block')
         document.getElementById('navButton').classList.remove('display-none')
     }
@@ -86,4 +92,9 @@ navButton.addEventListener('click', () => {
     document.getElementById('signup').classList.toggle('display-none')
     document.getElementById('signup').classList.toggle('my-1')
     document.getElementById('signup').classList.toggle('px-1')
+
+    document.getElementById('cart').classList.toggle('display-block')
+    document.getElementById('cart').classList.toggle('display-none')
+    document.getElementById('cart').classList.toggle('my-1')
+    document.getElementById('cart').classList.toggle('px-1')
 })
