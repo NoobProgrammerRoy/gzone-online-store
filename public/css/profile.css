@@ -4,7 +4,7 @@
 }
 
 .profile{
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.5fr;
 }
 
 .grid-col-2{
@@ -12,7 +12,19 @@
 }
 
 .order{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 2fr;
+}
+
+.order img{
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 2px #fff;
+    cursor: pointer;
+}
+
+.order img:hover{
+    transition-duration: 0.2ms;
+    filter: brightness(0.7);
 }
 
 @media all and (max-width: 767px){

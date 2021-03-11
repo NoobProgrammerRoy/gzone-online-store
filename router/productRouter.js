@@ -145,7 +145,7 @@ router.get('/cart/buy/:game', async (req, res) => {
         if (req.params.game) {
             const product = await Product.findOne({ name: req.params.game })
             if (product) {
-                const game = await User.updateOne({ email: user.email }, { $push: { owned: { name: product.name } } })
+                const game = await User.updateOne({ email: user.email }, { $push: { owned: { name: product.name, title: product.title } } })
                 if (game) {
                     req.session.user = await User.findOne({ email: user.email })
                     res.redirect(`/products/cart/remove/${req.params.game}`)    //remove from cart after buy

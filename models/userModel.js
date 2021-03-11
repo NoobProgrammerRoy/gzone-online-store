@@ -22,6 +22,7 @@ const userSchema = new mongoose.Schema({
     }],
     owned: [{
       name: { type: String, required: true },
+      title : { type: String, required: true }
     }]
 
 })

@@ -41,6 +41,14 @@
             </div>
             <div>
                 <h3 class="text-center text-danger">My Orders</h3>
+                <% if (user) { %>
+                    <% user.owned.forEach( function(product) { %>
+                        <div class="grid order my-2">
+                            <img src="./img/<%= product.name %>.jpg" alt="<%= product.name %>">
+                            <p class="text-light"><%= product.title %></p>
+                        </div>
+                    <% }) %>
+                <% } %>
             </div>    
             <% } %>
         </div>
