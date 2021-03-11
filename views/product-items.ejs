@@ -25,16 +25,22 @@
                 <img src="../img/<%= product.name %>.jpg" alt="">
             </div>
             <div>
-                <% if (product) { var count = 0 %>
+                <% if (product) { var own = 0, cart = 0 %>
                 <h2 class="text-danger" id="gameTitle"><%= product.title%></h2>
                 <p class="text-light py-1">Price : &#8377;<b class="text-light"><%= product.price %></b></p>
                 <p class="text-light"><%= product.description %></p>
                 <% } %>
                 <% if (user) { %>
-                    <% user.owned.forEach(function (game) { %>
-                        <% if (game.name == product.name) count += 1 %>
+                    <% user.cart.forEach(function (game) { %>
+                        <% if (game.name == product.name) cart += 1 %>
                     <% }) %>
-                    <% if (count == 0 ) { %>
+                    <% if (cart > 0 ) { %>
+                        <a href="/products/cart/remove/<%= product.name %>"><button class="btn btn-danger my-1" id="removeFromCart">Remove from Cart</button></a>
+                    <% } %>
+                    <% user.owned.forEach(function (game) { %>
+                        <% if (game.name == product.name) own += 1 %>
+                    <% }) %>
+                    <% if (own == 0 && cart == 0) { %>
                         <a href="/products/cart/add/<%= product.name %>"><button class="btn btn-primary my-1" id="addToCart">Add to Cart</button></a>
                     <% } %>
                 <% } %>
